@@ -1,3 +1,4 @@
+// Controller
 var MessagesView = {
 
   $chats: $('#chats'),
@@ -6,6 +7,7 @@ var MessagesView = {
   },
 
   render: function() {
+
   }
 
 };

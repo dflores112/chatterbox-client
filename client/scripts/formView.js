@@ -10,7 +10,7 @@ var FormView = {
     // Stop the browser from submitting the form
     event.preventDefault();
     // create message
-    var message = {'username': App.username, 'text': $("#message").val()};
+    var message = {username: App.username, text: $("#message").val(), roomname: Rooms.selected};
     // pass into render message
     MessagesView.renderMessage(message);
     //console.log('click!');

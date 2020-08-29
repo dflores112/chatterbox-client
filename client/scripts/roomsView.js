@@ -4,7 +4,8 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
-    RoomsView.$button.on('click', RoomsView.renderRoom($('#message').val()));
+    RoomsView.$button.on('click', RoomsView.handleClick);
+    RoomsView.$select.on('click', RoomsView.handleChange);
   },
 
   render: function() {
@@ -13,30 +14,27 @@ var RoomsView = {
     console.log(arr);
     for (var item of arr) {
       if (item !== "" && item !== undefined) {
-        $('#mySelect').append(new Option(item, item));
+        RoomsView.renderRoom(item);
       }
     }
-    // var i;
-    // // get all roomnames for messages
-    // var data = Rooms.storage;
-    // console.log(data)
-    // // for each roomname
-    // for (i = 0; i < data.length; i++) {
-    //   // if roomname equals room selected
-    //   if (data[i] === room??) {
-    //     var html = "";
-    //     // render the message into html template
-    //     html += MessageView.render(Messages.storage[i]);
-    //     // append to page
-    //     $('#chats').append(html);
-    //   }
-    // }
   },
 
   renderRoom: function (roomName) {
     console.log('click');
-    $('#mySelect').append(new Option(roomName, roomName));
-    //document.getElementById('mySelect');
+    RoomsView.$select.append(new Option(roomName, roomName));
+  },
+
+  handleClick: function (event) {
+    var roomname = prompt('Enter room name');
+    RoomsView.renderRoom(roomname);
+    Rooms.storage.push(roomname);
+    // RoomsView.render();
+    // MessagesView.render();
+  },
+
+  handleChange: function (event) {
+    Rooms.selected = RoomsView.$select.val();
+    MessagesView.render();
   }
 
 };

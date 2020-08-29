@@ -5,10 +5,10 @@ var MessageView = {
 
     '<div class=\'chat\'>' +
       '<div class=\'username\'>' +
-        '<%= username %>' +
+        '<%- username %>' +
       '</div>' +
       '<div>' +
-        '<%= text %>' +
+        '<%- text %>' +
       '</div>' +
     '</div>'
   )

@@ -13,11 +13,10 @@ var App = {
 
     // Fetch initial batch of messages
     App.startSpinner();
-    App.stopSpinner();
     App.fetch(App.stopSpinner);
 
     // updates/fetches more messages without having to refresh
-    //setInterval(App.fetch(App.stopSpinner), 3000);
+    // setInterval(App.fetch, 3000);
 
   },
 

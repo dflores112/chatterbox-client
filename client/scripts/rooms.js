@@ -1,5 +1,7 @@
 var Rooms = {
 
-  storage: []
+  storage: [],
+
+  selected: 'lobby'
 
 };

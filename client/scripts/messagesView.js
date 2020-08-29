@@ -15,7 +15,7 @@ var MessagesView = {
 
     // for each message
     for (i = 0; i < data.length; i++) {
-      if (data[i].username !== undefined) {
+      if (data[i].username !== undefined && Rooms.selected === data[i].roomname) {
         var html = "";
         // render into html template
         html += MessageView.render(data[i]);

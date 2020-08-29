@@ -12,6 +12,7 @@ var MessagesView = {
     var i;
     // get all messages in storage
     var data = Messages.storage;
+
     // for each message
     for (i = 0; i < data.length; i++) {
       var html = "";

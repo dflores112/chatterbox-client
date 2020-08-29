@@ -16,6 +16,9 @@ var App = {
     App.stopSpinner();
     App.fetch(App.stopSpinner);
 
+    // updates/fetches more messages without having to refresh
+    //setInterval(App.fetch(App.stopSpinner), 3000);
+
   },
 
   fetch: function(callback = ()=>{}) {
@@ -26,6 +29,8 @@ var App = {
       for (let i = 0; i < data.results.length; i++) {
         // push into the Message Model's storage
         Messages.storage.push(data.results[i]);
+        // push the roomname prop of each message into room model
+        Rooms.storage.push(data.results[i].roomname);
       }
       // render the batch
       MessagesView.render();
@@ -42,4 +47,9 @@ var App = {
     App.$spinner.fadeOut('fast');
     FormView.setStatus(false);
   }
+
+
+
+
+
 };

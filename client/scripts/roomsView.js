@@ -5,9 +5,20 @@ var RoomsView = {
 
   initialize: function() {
     //RoomsView.$button.on('click', RoomsView.renderRoom());
+    console.log(Array.isArray(Rooms.storage));
+    console.log(Rooms.storage.length);
+
   },
 
   render: function() {
+    var set = new Set(Rooms.storage);
+    var arr = [...set];
+    console.log(arr);
+    for (var item of arr) {
+      if (item !== "" && item !== undefined) {
+        $('#mySelect').append(new Option(item, item));
+      }
+    }
     // var i;
     // // get all roomnames for messages
     // var data = Rooms.storage;
@@ -25,8 +36,10 @@ var RoomsView = {
     // }
   },
 
-  renderRoom: function () {
-    console.log('click');
+  renderRoom: function (roomName) {
+    $('#mySelect').append(new Option(roomName, roomName));
+    //document.getElementById('mySelect');
+    //console.log('click');
   }
 
 };

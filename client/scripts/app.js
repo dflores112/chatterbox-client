@@ -31,9 +31,12 @@ var App = {
         Messages.storage.push(data.results[i]);
         // push the roomname prop of each message into room model
         Rooms.storage.push(data.results[i].roomname);
+        //console.log(data.results[i].roomname);
       }
       // render the batch
+      console.log(Messages.storage);
       MessagesView.render();
+      RoomsView.render();
       callback();
     });
   },
@@ -47,9 +50,5 @@ var App = {
     App.$spinner.fadeOut('fast');
     FormView.setStatus(false);
   }
-
-
-
-
 
 };

@@ -13,7 +13,7 @@ var FormView = {
     var message = {'username': App.username, 'text': $("#message").val()};
     // pass into render message
     MessagesView.renderMessage(message);
-    console.log('click!');
+    //console.log('click!');
   },
 
   setStatus: function(active) {

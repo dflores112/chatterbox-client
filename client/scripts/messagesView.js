@@ -15,11 +15,13 @@ var MessagesView = {
 
     // for each message
     for (i = 0; i < data.length; i++) {
-      var html = "";
-      // render into html template
-      html += MessageView.render(data[i]);
-      // append to page
-      $('#chats').append(html);
+      if (data[i].username !== undefined) {
+        var html = "";
+        // render into html template
+        html += MessageView.render(data[i]);
+        // append to page
+        $('#chats').append(html);
+      }
     }
   },
 

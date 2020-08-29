@@ -4,10 +4,7 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
-    //RoomsView.$button.on('click', RoomsView.renderRoom());
-    console.log(Array.isArray(Rooms.storage));
-    console.log(Rooms.storage.length);
-
+    RoomsView.$button.on('click', RoomsView.renderRoom($('#message').val()));
   },
 
   render: function() {
@@ -37,9 +34,9 @@ var RoomsView = {
   },
 
   renderRoom: function (roomName) {
+    console.log('click');
     $('#mySelect').append(new Option(roomName, roomName));
     //document.getElementById('mySelect');
-    //console.log('click');
   }
 
 };

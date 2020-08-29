@@ -20,8 +20,13 @@ var App = {
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-      console.log(data);
-
+      // iterate through the initial batch of messages
+      for (let i = 0; i < data.results.length; i++) {
+        // push into the Message Model's storage
+        Messages.storage.push(data.results[i]);
+      }
+      // render the initial batch
+      MessagesView.render();
       callback();
     });
   },

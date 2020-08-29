@@ -12,7 +12,7 @@ var Parse = {
       contentType: 'application/json',
       success: successCB,
       error: errorCB || function(error) {
-        console.error('chatterbox: Failed to fetch messages', error);
+        console.error('chatterbox: Failed to create messages', error);
       }
     });
   },

@@ -1,6 +1,6 @@
+// Model
 var Messages = {
 
   storage: []
-
 
 };

@@ -15,17 +15,3 @@ var MessageView = {
 
 };
 
-
-$.getJSON(Parse.server, function(data) {
-  var i;
-  var html = '';
-  for (i = 0; i < data.length; i++) {
-    html += render(data[i]);
-    $('#chats').append(html);
-
-  }
-});
-
-$(document).on('click', 'submit', function() {
-  alert('Message Added');
-});
